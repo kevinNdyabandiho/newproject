@@ -1,2 +1,2 @@
 # newproject
-This is a new laravel jetstream application
+This is a **new** laravel jetstream application

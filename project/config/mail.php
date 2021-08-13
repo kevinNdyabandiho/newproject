@@ -83,18 +83,9 @@ return [
     |
     */
 
-    'stream' => [
-        'ssl' => [
-            'allow_self_signed' => true,
-            'verify_peer' => true,
-            'verify_peer_name' => false,
-        ],
-    ],
-
-
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'ndyabandihowork@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'Gommi'),
+        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+        'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
     /*

@@ -17,6 +17,5 @@ class DeleteUser implements DeletesUsers
         $user->deleteProfilePhoto();
         $user->tokens->each->delete();
         $user->delete();
-        
     }
 }

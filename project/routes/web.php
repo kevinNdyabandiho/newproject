@@ -16,17 +16,29 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::view('/services','products');
+Route::view('/about', 'about');
+Route::view('/contact', 'contact');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-// Route::get('/', function () {
-//     return view('services');
-// });
-// Route::get('/', function () {
-//     return view('products');
-// });
+Route::group(['middleware'=>[
+    'auth:sanctum',
+    'verified'
+]], function(){
+    Route::get('/dashboard', function(){
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::get('/pages', function(){
+        return view('admin.pages');
+    })->name('pages');
+});
+
+
 
 
 Route::group(['prefix' => 'admin'], function () {
